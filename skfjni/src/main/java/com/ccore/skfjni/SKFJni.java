@@ -1,4 +1,4 @@
-package com.ccore.jni;
+package com.ccore.skfjni;
 
 import android.util.Log;
 
@@ -29,7 +29,7 @@ import android.util.Log;
  * @Description This Class for SKF JNI
  **/
 public class SKFJni {
-    private String TAG = "SKFJNI JAVA:";
+    private String TAG = "SKF JAVA:";
     public SKFJni() {
         Log.e(TAG,"SKF JAVA IN...");
     }
@@ -44,6 +44,13 @@ public class SKFJni {
      * @Function: 断开设备
      * @return*/
     public native long SKF_DisconnectDev();
+
+    /**
+     * @Function: 设置应用路径
+     * @param szAppPath
+     * @return
+     */
+    public native long SKF_SetAppPath(byte[] szAppPath);
 
     static {
         System.loadLibrary("SKFJni");
